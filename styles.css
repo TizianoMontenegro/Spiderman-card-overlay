@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    margin: 0;background-color: #310000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23BF0F75'/%3E%3Cstop offset='1' stop-color='%23310000'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23FFD92C' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23FFD92C' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.5'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}
+.card__container{
+    width: 100%;
+    padding: 100px 1em 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+    justify-content: center;
+    gap: 2em;
+}
+.card{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-size: cover;
+    background-position: 100%;
+    overflow: hidden;
+}
+.card:first-child{background-image: url("./spidy2.jpg");}
+.card:nth-child(2){
+    background-image: url("./spidy.jpg");
+    background-position: 100% 100%;
+}
+.card:last-child{background-image: url("./spidy3.jpg");}
+.card::before{
+    content: "Spider-man";
+    position: absolute;
+    font-size: 2em;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top: 100%;
+    height: 400px;
+    background-color: #a22a;
+    color: #fff;
+    opacity: 0;
+    transition: transform .2s ease-in-out, opacity .3s .1s;
+}
+.card:hover::before{
+    transform: translateY(-100%);
+    opacity:1;
+}
